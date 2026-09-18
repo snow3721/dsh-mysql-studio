@@ -1,0 +1,15 @@
+# dsh-mysql-studio bundle patch.
+#
+# Inserts one loader row into the profile composition. The row points back at
+# this package's own Cordis plugin, so adding this package as a profile
+# dependency activates both halves (host + web client).
+#
+# Install (local checkout):
+#   dsh plugin --profile web add <绝对路径>\dsh-mysql-studio
+# 或手工：在 profile 的 package.json dependencies 写
+#   "dsh-mysql-studio": "link:D:\\projects\\DSH\\dsh-mysql-studio"
+# 并把 "dsh-mysql-studio" 加进 dsh.profile.bundles，然后 pnpm install。
+- insert:
+    - id: mysql-studio
+      name: 'dsh-mysql-studio'
+      config: {}

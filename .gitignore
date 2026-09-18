@@ -1,0 +1,14 @@
+# Dependencies are installed locally so the plugin is self-contained: it must
+# never rely on some OTHER plugin's dependency tree being present, which is a
+# mistake this project already made once (see scripts/verify-install.mjs).
+node_modules/
+
+# pnpm writes its content-addressable store here when the package directory is
+# the store root.
+.pnpm-store/
+
+# STATUS.md is a local working document, not part of the repository: it tracks
+# the state of THIS machine's deployment (real paths, which process is running,
+# what still needs a restart) and reads as noise to anyone else. README.md is
+# the only document that ships — `package.json.files` lists exactly that one.
+STATUS.md

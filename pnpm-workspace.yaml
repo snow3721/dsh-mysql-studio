@@ -1,0 +1,7 @@
+# pnpm configuration for this package.
+#
+# Native addons stay denied so `pnpm install` never prompts for a C++ toolchain.
+# mysql2 is pure JavaScript at this pinned version; nothing else in this plugin
+# needs a build step.
+allowBuilds:
+  cpu-features: false
